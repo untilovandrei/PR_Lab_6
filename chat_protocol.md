@@ -3,15 +3,18 @@
 **Algorithm of work:**
 1. Wireshark application has been stared;
 2. Open 2 instances of Application: Corina and Corina-Instance-2;
-3. As there are more than 1 application running on the Computer, which make use of Internet, in the wireshark are displayed multiple transmitted packages(img1.png) ![alt text](imgs/intf.png).
+3. As there are more than 1 application running on the Computer, which make use of Internet, in the wireshark are displayed multiple transmitted packages.(packages.png) ![alt text](imgs/packages.png)
+
 **4.Applicatoin Package indetification** <br/>
-In order to filter the packages the data was filtered according to `udp.port == 42424`, as the application is running in UDP, port-42424 ![alt text](imgs/hex.png);
+In order to filter the packages the data was filtered according to `udp.port == 42424`, as the application is running in UDP, port-42424 ;
+![alt text](imgs/intf.png)<br/>
 
 **5. Analyzis of received/send data**<br/>
 Studying a little bit the Chat-Application, had been identified 2 types of 'actions': Login or Connecting to the Chat, and Sending a message, that's why we will have to study 2 types/structures of packages.
 
 **6. Structure 1: Login(Connecting) to the Chat package**<br/>
-Package structure is presented in figure ![alt text](imgs/intf.png)..
+Package structure is presented in figure ![alt text](imgs/hex.png)<br/>
+
 This is the sent package content. On the left side we have hexa-decimal representation of the package content, on the right we have the data in Ascii representation. In fact this is the transmitted data encoded in Base64.
 -The ASCII 'text' had been coppied, and converted through a Hex-to-String converter.<br/> 
 Coppied data:

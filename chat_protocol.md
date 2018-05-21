@@ -2,7 +2,7 @@
 
 **Algorithm of work:**
 1. Wireshark application has been stared;
-2. Open 2 instances of Application: Corina and Corina-Instance-2;
+2. Open 2 instances of Application: andrei and andrei-2;
 3. As there are more than 1 application running on the Computer, which make use of Internet, in the wireshark are displayed multiple transmitted packages.(packages.png) ![alt text](imgs/packages.png)
 
 **4.Applicatoin Package indetification** <br/>
@@ -13,7 +13,7 @@ In order to filter the packages the data was filtered according to `udp.port == 
 Studying a little bit the Chat-Application, had been identified 2 types of 'actions': Login or Connecting to the Chat, and Sending a message, that's why we will have to study 2 types/structures of packages.
 
 **6. Structure 1: Login(Connecting) to the Chat package**<br/>
-Package structure is presented in figure ![alt text](imgs/hex.png)<br/>
+Package structure is presented in figure <br/> ![alt text](imgs/hex.png)<br/>
 
 This is the sent package content. On the left side we have hexa-decimal representation of the package content, on the right we have the data in Ascii representation. In fact this is the transmitted data encoded in Base64.
 -The ASCII 'text' had been coppied, and converted through a Hex-to-String converter.<br/> 
@@ -24,7 +24,7 @@ Converted:
 [MTUyNjkxNTg2OTUyM3w1ODNkMDI2NS05Yjc1LTQ0YTMtYWY2Ny1mMjkxMjFmNjlkNTR8OmFsbHxlenAwZVhCbElEcHZibXhwYm1Vc0lEcDFjMlZ5Ym1GdFpTQWljMmhoWkc5M0luMD0=]
 <br/>
 Base64 Decoded:
-[]nS[1526915869523|583d0265-9b75-44a3-af67-f29121f69d54|:all|ezp0eXBlIDpvbmxpbmUsIDp1c2VybmFtZSAic2hhZG93In0=]
+[1526915869523|583d0265-9b75-44a3-af67-f29121f69d54|:all|ezp0eXBlIDpvbmxpbmUsIDp1c2VybmFtZSAic2hhZG93In0=]
 <br/>
 6.1. `1526915869523`-  Time from miliseconds: Mon May 21 2018 15:17:49<br/>
 6.2. `583d0265-9b75-44a3-af67-f29121f69d54` - UUID assigned to the logged user. This UUID will be used later so it is important to understand what it is for.<br/>
